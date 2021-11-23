@@ -1,0 +1,45 @@
+{
+    "name": "eve/pdf-converter",
+    "description": "Convert HTML to PDF, supporting multiple drivers",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.0",
+        "eve/uuid": "^1.0",
+        "barryvdh/laravel-dompdf": "^0.9.0",
+        "pdfcrowd/pdfcrowd": "^5.2",
+        "illuminate/support": "^8.0",
+        "illuminate/http": "^8.0",
+        "illuminate/log": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.23",
+        "eve/coding-standard": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Eve\\PdfConverter\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Eve\\PdfConverter\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Eve\\PdfConverter\\ServiceProvider"
+            ],
+            "aliases": {
+                "PdfConverter": "Eve\\PdfConverter\\Facades\\PdfConverter"
+            }
+        }
+    },
+    "scripts": {
+        "test": "phpunit tests",
+        "cs": "phpcs --standard=ruleset.xml",
+        "cs:fix": "phpcbf --standard=ruleset.xml"
+    }
+}
