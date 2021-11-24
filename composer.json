@@ -1,9 +1,10 @@
 {
     "name": "eve/pdf-converter",
-    "description": "Convert HTML to PDF, supporting multiple drivers",
+    "description": "Laravel package to convert HTML to PDF, supporting multiple drivers.",
     "type": "library",
     "license": "MIT",
     "minimum-stability": "stable",
+    "keywords": ["pdf", "html", "convert", "laravel"],
     "require": {
         "php": "^8.0",
         "eve/uuid": "^1.0",
