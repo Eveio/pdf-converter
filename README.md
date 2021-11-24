@@ -1,4 +1,4 @@
-# eve/pdf-converter
+# eve/pdf-converter [![Main](https://github.com/Eveio/pdf-converter/actions/workflows/main.yml/badge.svg)](https://github.com/Eveio/pdf-converter/actions/workflows/main.yml)
 
 A Laravel package to help convert HTML to PDF. Supports multiple drivers.
 
@@ -23,7 +23,7 @@ A `pdf_converter.php` file will be copied into your application's `config` folde
 eve/pdf-converter supports 4 drivers, which can be configured in `.env` with the `PDF_CONVERTER_DRIVER` key:
 
 * `dompdf`: The default. Uses [laravel-dompdf](https://github.com/barryvdh/laravel-dompdf) under the hood. 
-* `mock`: Always returns a fixture PDF file. Doesn't do any actual conversion.
+* `mock`: Always returns a [fixture PDF file](https://github.com/Eveio/pdf-converter/blob/master/storage/mock.pdf). Doesn't do any actual conversion.
 * `log`: Logs the input HTML and the output path using Laravel's logger. Doesn't do any actual conversion.
 * `pdfcrowd`: Uses the commercial [Pdfcrowd](https://pdfcrowd.com/) service. You'll have to set the `PDFCROWD_USERNAME` and `PDFCROWD_API_KEY` environment variables as well for this driver to work.
 
