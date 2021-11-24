@@ -25,7 +25,7 @@ eve/pdf-converter supports 4 drivers, which can be configured in `.env` with the
 * `dompdf`: The default. Uses [laravel-dompdf](https://github.com/barryvdh/laravel-dompdf) under the hood. 
 * `mock`: Always returns a fixture PDF file. Doesn't do any actual conversion.
 * `log`: Logs the input HTML and the output path using Laravel's logger. Doesn't do any actual conversion.
-* `pdfcrowd`: Uses the commercial [Pdfcrowd](https://pdfcrowd.com/) service. You'll have to set the `PDFCROWD_USERNAME` and `PDFCROWD_API_KEY` as well for this driver to work.
+* `pdfcrowd`: Uses the commercial [Pdfcrowd](https://pdfcrowd.com/) service. You'll have to set the `PDFCROWD_USERNAME` and `PDFCROWD_API_KEY` environment variables as well for this driver to work.
 
 Of these drivers, `mock` and `log` are meant for development and/or testing purposes. `dompdf` can be used for production but will most likely require some heavy configuration, when `pdfcrowd` should be the best choice if you're willing to spend some bucks per month.
 
