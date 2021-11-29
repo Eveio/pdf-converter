@@ -16,7 +16,7 @@ class ServiceProvider extends IlluminateServiceProvider
             'mock' => MockPdfConverter::class,
             'log' => LogPdfConverter::class,
             'pdfcrowd' => PdfcrowdPdfConverter::class,
-            default => UnsupportedDriverException::make(config('pdf_converter.driver')),
+            default => throw UnsupportedDriverException::make(config('pdf_converter.driver')),
         });
     }
 
