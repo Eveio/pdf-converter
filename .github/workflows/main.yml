@@ -10,6 +10,17 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
+
+    env:
+      COMPOSER_NO_INTERACTION: 1
+
+    strategy:
+      matrix:
+        php: [8.0, 8.1]
+        laravel: [8.*, 9.*]
+
+    name: P${{ matrix.php }} - L${{ matrix.laravel }}
+
     steps:
       - name: Check out
         uses: actions/checkout@v2
@@ -17,13 +28,14 @@ jobs:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.0
+          php-version: ${{ matrix.php }}
           tools: composer:v2
+          extensions: mbstring
 
       - name: Install dependencies
-        uses: ramsey/composer-install@v1
-        with:
-          composer-options: --prefer-dist
+        run: |
+          composer require "laravel/framework:${{ matrix.laravel }}" --no-update --no-progress
+          composer update --prefer-dist --no-progress
 
       - name: Run checks
         run: |

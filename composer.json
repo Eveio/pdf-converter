@@ -8,14 +8,14 @@
     "require": {
         "php": "^8.0",
         "eve/uuid": "^1.0",
-        "barryvdh/laravel-dompdf": "^0.9.0",
+        "barryvdh/laravel-dompdf": "^1.0.0",
         "pdfcrowd/pdfcrowd": "^5.2",
-        "illuminate/support": "^8.0",
-        "illuminate/http": "^8.0",
-        "illuminate/log": "^8.0"
+        "illuminate/support": "^8.0|^9.0",
+        "illuminate/http": "^8.0|^9.0",
+        "illuminate/log": "^8.0|^9.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^6.23",
+        "orchestra/testbench": "^6|^7.0",
         "eve/coding-standard": "^1.1"
     },
     "autoload": {
@@ -42,5 +42,10 @@
         "test": "phpunit tests",
         "cs": "phpcs --standard=ruleset.xml",
         "cs:fix": "phpcbf --standard=ruleset.xml"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     }
 }
